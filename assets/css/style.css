@@ -17,6 +17,7 @@ body {
   width: fit-content;
   margin: 20px auto;
   scale: 1.5;
+    margin-bottom: 20px;
 }
 
 /* Progress circle styles - improved with transforms for smoother animation */
