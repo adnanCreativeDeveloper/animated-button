@@ -16,6 +16,7 @@ body {
 .btn-container {
   width: fit-content;
   margin: 20px auto;
+  scale: 1.2;
 }
 
 /* Progress circle styles - improved with transforms for smoother animation */
@@ -179,7 +180,7 @@ body {
 }
 
 .code-container {
-  width: 320px;
+  width: 100%;
   height: fit-content;
   background: rgb(2, 0, 36);
   background: linear-gradient(180deg, rgba(2, 0, 36, 1) 100%, rgba(6, 7, 91, 1) 10%, rgba(6, 4, 4, 1) 100%);
@@ -190,8 +191,6 @@ body {
   border: 1px solid rgba(0, 0, 255, 0.514);
   box-shadow: rgba(24, 5, 107, 0.56) 0px 54px 55px, rgba(24, 5, 107, 0.56) 0px -12px 30px, rgba(24, 5, 107, 0.56) 0px 4px 6px, rgba(24, 5, 107, 0.56) 0px 12px 13px, rgba(24, 5, 107, 0.56) 0px -3px 5px;
   animation: glow 1.5s ease-in-out infinite alternate;
-
-
 }
 
 .code-container:nth-child(2) {

@@ -35,7 +35,7 @@
         </button>
       </div>
       <div class="code" style="margin-top: 10px;">
-        <div>
+        <div style="width: 50%;">
           <div class="code-container">
             <div class="code-container-header">
               <div class="circle">
@@ -109,9 +109,14 @@
               transform: translate(-50%, -50%);
               font-size: 8px;
               font-weight: bold;
+              color: rgb(234, 158, 15);
             }            
             .download-btn {
+              background: rgb(244, 240, 240);
               padding: 10px 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               gap: 5px;
               border-radius: 5px;
               outline: none;
@@ -121,7 +126,74 @@
               overflow: hidden;
               box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
               transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.4s ease, box-shadow 0.4s ease;
-            }  
+            }            
+            .download-btn:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }            
+            .download-btn svg {
+              fill: rgb(234, 158, 15);
+              transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), margin-right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+              flex-shrink: 0;
+            }            
+            .download-btn p {
+              color: rgb(234, 158, 15);
+              font-weight: 800;
+              white-space: nowrap;
+              transition: color 0.3s ease;
+              font-family: 'Courier New', Courier, monospace;
+            }            
+            .success-animation {
+              background: #c8e6c9;
+              transform: scale(1.05);
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            }            
+            .success-animation p {
+              color: #388e3c;
+            }            
+            .success-animation svg {
+              fill: #388e3c;
+              transform: rotate(360deg);
+            }            
+            .download-btn::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 5px;
+              height: 5px;
+              background: rgba(255, 255, 255, 0.5);
+              opacity: 0;
+              border-radius: 100%;
+              transform: scale(1);
+              transition: 0.9s;
+            }            
+            .download-btn.clicked::after {
+              animation: ripple 0.8s ease-out;
+            }            
+            @keyframes ripple {
+              0% {
+                transform: scale(0);
+                opacity: 1;
+              }
+              100% {
+                transform: scale(20);
+                opacity: 0;
+              }
+            }
+            @keyframes pulse {
+            
+              0%,
+              100% {
+                transform: scale(1);
+              }
+              50% {
+                transform: scale(1.05);
+              }
+            }
+            .pulse {
+              animation: pulse 1.5s infinite;
+            }
           </code>
         </pre>
           </div>
@@ -168,7 +240,7 @@
           </code>
         </pre>
         </div> -->
-        <div>
+        <div style="width: 50%;">
           <div
             style="display: flex; align-items: start; justify-items: center; gap: 10px; border-bottom: #2AA198 1px solid; padding-bottom: 5px; width: fit-content; margin-left: 5px;">
             <div style="height: 50px; width: 50px; border-radius: 100%; background: green;">
@@ -288,6 +360,24 @@
                     progressContainer.style.opacity = "0";
                     progressContainer.style.transform = "scale(0.8)";
                     downloadBtn.classList.remove("pulse");
+                    setTimeout(() => {
+                      btnText.textContent = "Done";
+                      downloadBtn.classList.add("success-animation");
+                      svgIcon.innerHTML = '<path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path>';
+                      setTimeout(() => {
+                        downloadBtn.style.width = originalWidth + "px";
+                        svgIcon.style.marginRight = "0";
+                        setTimeout(() => {
+                          if (progressContainer.parentNode === downloadBtn) {
+                            downloadBtn.removeChild(progressContainer);
+                          }
+                          svgIcon.innerHTML = '<path d="M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z"></path>';
+                          btnText.textContent = "Download";
+                          downloadBtn.classList.remove("success-animation");
+                          downloadBtn.style.width = "";
+                        }, 1500);
+                      }, 1000);
+                    }, 400);
                   }
                 });
               </code>
