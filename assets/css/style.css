@@ -16,8 +16,8 @@ body {
 .btn-container {
   width: fit-content;
   margin: 20px auto;
-  scale: 1.5;
-    margin-bottom: 20px;
+  scale: 2;
+  margin-bottom: 7 0px;
 }
 
 /* Progress circle styles - improved with transforms for smoother animation */
@@ -177,7 +177,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 10px;
+  gap: 20px;
 }
 
 .code-container {
@@ -196,7 +196,7 @@ body {
 
 .code-container:nth-child(2) {
   /* transform: translateX(-20px); */
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 /* .code-container:last-child {
