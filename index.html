@@ -34,7 +34,310 @@
           <p>Download</p>
         </button>
       </div>
-      
+      <div class="code" style="margin-top: 50px;">
+        <!-- <div class="code-container">
+          <div class="code-container-header">
+            <div class="circle">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <h2>.CSS</h2>
+          </div>
+          <pre>
+          <code class="language-css css">
+              .btn-container {
+                width: fit-content;
+                margin: 20px auto;
+              }
+              
+              .download-btn {
+                background: rgb(244, 240, 240);
+                padding: 10px 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+              }
+              
+              .digit-container {
+                height: 5em;
+                overflow: hidden;
+                transition: cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+              }
+              
+              .rolling-digit {
+                position: relative;
+                transition: top 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+              }
+          </code>
+        </pre>
+        </div>
+        <div class="code-container">
+          <div class="code-container-header">
+            <div class="circle">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <h2>.CSS</h2>
+          </div>
+          <pre>
+            <code class="language-html html">
+              &lt;div class="btn-container"&gt;
+                &lt;button class="download-btn"&gt;
+                  &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"&gt;
+                    &lt;path d="M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z"&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;p&gt;Download&lt;/p&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+            </code>
+        </pre>
+        </div> -->
+
+        <div class="code-container">
+          <div class="code-container-header">
+            <div class="circle">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <h2>.CSS</h2>
+          </div>
+          <pre>
+          <code class="language-css css">
+            .download-btn {
+                transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+              }
+              
+              .downloading-status {
+                color: black;
+                font-weight: 800;
+                margin-right: 5px;
+                display: inline-flex;
+                align-items: center;
+                transition: opacity 0.3s ease, width 0.3s ease;
+              }
+              
+              .digit-container {
+                width: 0.6em;
+                height: 1em;
+                overflow: hidden;
+              }
+              
+              .rolling-digit {
+                position: relative;
+                transition: top 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+              }
+              
+              .download-btn {
+                transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+              }
+          </code>
+        </pre>
+        </div>
+        <div>
+          <div
+            style="display: flex; align-items: start; justify-items: center; gap: 10px; border-bottom: #2AA198 1px solid; padding-bottom: 5px; width: fit-content; margin-left: 5px;">
+            <div style="height: 50px; width: 50px; border-radius: 100%; background: green;">
+              <img src="assets/media/imgs/premium_vector-1682310664746-f934119dffd6.avif" alt="premium_vector"
+                style="width: 100%; height: 100%; border-radius: 100%; object-fit: cover;">
+
+            </div>
+            <div>
+              <h2 style="font-size: 20px;color: white;">Animated Button</h2>
+              <p style="color: #2AA198; font-size: 14px;">
+                Beautiful animated download <br> button with CSS
+              </p>
+            </div>
+          </div>
+          <div class="code-container">
+            <div class="code-container-header">
+              <div class="circle">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <h2>.CSS</h2>
+            </div>
+            <pre>
+          <code class="language-css css">
+              .downloading-status {
+                color: black;
+                font-weight: 800;
+              }
+              
+              .download-btn p {
+                color: rgb(234, 158, 15);
+                font-weight: 800;
+              }
+              .download-btn svg {
+                transition: margin-right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+              }
+              
+              .download-btn p {
+                transition: all 0.3s ease;
+              }
+              
+              .download-btn svg {
+                fill: rgb(234, 158, 15);
+              }
+          </code>
+        </pre>
+          </div>
+          <!-- <div class="code-container">
+            <div class="code-container-header">
+              <div class="circle">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <h2>.CSS</h2>
+            </div>
+            <pre>
+              <code class="language-javascript javascript">
+                document.addEventListener("DOMContentLoaded", function () {
+                  const downloadBtn = document.querySelector(".download-btn");
+                  const btnText = downloadBtn.querySelector("p");
+                  const svgIcon = downloadBtn.querySelector("svg");
+                
+                  // Create progress circle elements
+                  const progressContainer = document.createElement("div");
+                  progressContainer.className = "progress-container";
+                  const progressCircle = document.createElement("div");
+                  progressCircle.className = "progress-circle";
+                  const progressText = document.createElement("span");
+                  progressText.className = "progress-text";
+                
+                  progressContainer.appendChild(progressCircle);
+                  progressContainer.appendChild(progressText);
+                
+                  // Original width of button - store this for animation
+                  let originalWidth;
+                
+                  downloadBtn.addEventListener("click", function () {
+                    // Add ripple effect
+                    downloadBtn.classList.add("clicked");
+                    setTimeout(() => {
+                      downloadBtn.classList.remove("clicked");
+                    }, 800);
+                
+                    if (btnText.textContent === "Download") {
+                      // Store original width before any modification
+                      originalWidth = downloadBtn.offsetWidth;
+                      // Set width explicitly so we can animate it
+                      downloadBtn.style.width = originalWidth + "px";
+                
+                      // Start download process with 3 seconds (can be changed)
+                      startDownload(3);
+                    }
+                  });
+                
+                  function startDownload(seconds = 3) {
+                    // Configure time parameters
+                    const totalTime = seconds * 1000;
+                    const updateInterval = 30; // update more frequently for smoother animation
+                    const totalSteps = totalTime / updateInterval;
+                    let currentStep = 0;
+                
+                    // First setup the progress circle
+                    progressCircle.style.background = "conic-gradient(rgb(234, 158, 15) 0%, transparent 0%)";
+                    progressText.textContent = "0%";
+                
+                    // Insert progress container before modifying width
+                    downloadBtn.insertBefore(progressContainer, btnText);
+                
+                    // Animate button width expansion with a slight delay
+                    setTimeout(() => {
+                      downloadBtn.style.width = (originalWidth + 70) + "px";
+                
+                      // Add subtle animation to SVG
+                      svgIcon.style.marginRight = "5px";
+                
+                      // Fade in the progress circle
+                      setTimeout(() => {
+                        progressContainer.style.opacity = "1";
+                        progressContainer.style.transform = "scale(1)";
+                
+                        // Start progress animation
+                        const interval = setInterval(() => {
+                          currentStep++;
+                
+                          // Calculate percentage
+                          const percentage = Math.min(Math.floor((currentStep / totalSteps) * 100), 100);
+                
+                          // Update progress circle with smooth transition
+                          progressCircle.style.background = `conic-gradient(rgb(234, 158, 15) ${percentage}%, transparent ${percentage}%)`;
+                          progressText.textContent = `${percentage}%`;
+                
+                          // Change text to "Downloading" after a bit of progress
+                          if (percentage === 5 && btnText.textContent !== "Downloading") {
+                            btnText.textContent = "Downloading";
+                            downloadBtn.classList.add("pulse");
+                          }
+                
+                          if (percentage >= 100) {
+                            clearInterval(interval);
+                            completeDownload();
+                          }
+                        }, updateInterval);
+                      }, 200);
+                    }, 100);
+                  }
+                
+                  function completeDownload() {
+                    // Smooth fade out and transform for progress container
+                    progressContainer.style.opacity = "0";
+                    progressContainer.style.transform = "scale(0.8)";
+                    downloadBtn.classList.remove("pulse");
+                
+                    // Wait for fade out animation to complete
+                    setTimeout(() => {
+                      // Change text to "Done"
+                      btnText.textContent = "Done";
+                
+                      // Add success animation
+                      downloadBtn.classList.add("success-animation");
+                
+                      // Transform SVG icon for success animation
+                      svgIcon.innerHTML = '<path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path>';
+                
+                      // Wait for success animation before reverting
+                      setTimeout(() => {
+                        // Smoothly restore button width
+                        downloadBtn.style.width = originalWidth + "px";
+                        svgIcon.style.marginRight = "0";
+                
+                        // Reset to "Download" after delay
+                        setTimeout(() => {
+                          // Remove progress container from DOM properly
+                          if (progressContainer.parentNode === downloadBtn) {
+                            downloadBtn.removeChild(progressContainer);
+                          }
+                
+                          // Reset SVG to download icon
+                          svgIcon.innerHTML = '<path d="M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z"></path>';
+                
+                          // Reset text and remove success styles
+                          btnText.textContent = "Download";
+                          downloadBtn.classList.remove("success-animation");
+                
+                          // Clear explicit width to let button size naturally
+                          downloadBtn.style.width = "";
+                        }, 1500);
+                      }, 1000);
+                    }, 400);
+                  }
+                });
+              </code>
+          </pre>
+          </div> -->
+        </div>
+      </div>
       </div>
     </div>
   </div>
