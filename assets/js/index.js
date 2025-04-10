@@ -1,3 +1,34 @@
+// removing extra spaces from code to show in dom
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all code elements
+  const codeElements = document.querySelectorAll('pre code');
+
+  // For each code element
+  codeElements.forEach(function (codeElement) {
+    // Get the text content
+    let content = codeElement.textContent;
+
+    // Find the common indentation level
+    const match = content.match(/^[ \t]+/m);
+    const indent = match ? match[0] : '';
+
+    // Remove the common indentation from each line
+    if (indent) {
+      const regex = new RegExp('^' + indent, 'gm');
+      content = content.replace(regex, '');
+    }
+
+    // Trim leading and trailing whitespace
+    content = content.trim();
+
+    // Set the cleaned content back
+    codeElement.textContent = content;
+  });
+
+  // Re-highlight with Prism
+  Prism.highlightAll();
+});
+
 // This script handles the download button animation and progress circle display
 // It creates a ripple effect on click, expands the button width, and shows a progress circle
 // download button animation
