@@ -16,7 +16,7 @@ body {
 .btn-container {
   width: fit-content;
   margin: 20px auto;
-  scale: 1.2;
+  scale: 1.5;
 }
 
 /* Progress circle styles - improved with transforms for smoother animation */
