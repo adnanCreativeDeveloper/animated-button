@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 body {
   background: #121111;
   padding: 10px;
@@ -12,14 +11,13 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
 .btn-container {
   width: fit-content;
   margin: 20px auto;
   scale: 1.2;
 }
-
-/* Progress circle styles - improved with transforms for smoother animation */
+/* Progress circle styles - improved with
+   transforms for smoother animation */
 .progress-container {
   position: relative;
   width: 24px;
@@ -27,44 +25,45 @@ body {
   margin-right: 8px;
   opacity: 0;
   transform: scale(0.8);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.4s ease,
+    transform 0.4s ease;
   flex-shrink: 0;
 }
-
 .progress-circle {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: conic-gradient(rgb(234, 158, 15) 0%, transparent 0%);
+  background:
+    conic-gradient(#ea9e0f 0%,
+      transparent 0%);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background 0.3s linear;
 }
-
 .progress-circle::before {
   content: '';
   position: absolute;
   width: 80%;
   height: 80%;
-  background: rgb(244, 240, 240);
+  background: #f4f0f0;
   border-radius: 50%;
 }
-
 .progress-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform:
+    translate(-50%, -50%);
   font-size: 8px;
   font-weight: bold;
-  color: rgb(234, 158, 15);
+  color: #ea9e0f;
 }
-
-/* Button styles - improved animation properties */
+/* Button styles - improved
+   animation properties */
 .download-btn {
-  background: rgb(244, 240, 240);
+  background: #f4f0f0;
   padding: 10px 15px;
   display: flex;
   align-items: center;
@@ -76,49 +75,49 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.1);
+  transition:
+    width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
     transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
     background-color 0.4s ease,
     box-shadow 0.4s ease;
 }
-
 .download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .download-btn svg {
-  fill: rgb(234, 158, 15);
-  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+  fill: #ea9e0f;
+  transition:
+    transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
     margin-right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   flex-shrink: 0;
 }
-
 .download-btn p {
-  color: rgb(234, 158, 15);
+  color: #ea9e0f;
   font-weight: 800;
   white-space: nowrap;
   transition: color 0.3s ease;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:
+    'Courier New', Courier, monospace;
 }
-
-/* Success animation with ripple effect */
+/* Success animation
+   with ripple effect */
 .success-animation {
   background: #c8e6c9;
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 5px 15px #00000026;
 }
-
 .success-animation p {
   color: #388e3c;
 }
-
 .success-animation svg {
   fill: #388e3c;
   transform: rotate(360deg);
 }
-
 /* Ripple effect */
 .download-btn::after {
   content: '';
@@ -127,29 +126,26 @@ body {
   left: 50%;
   width: 5px;
   height: 5px;
-  background: rgba(255, 255, 255, 0.5);
+  background:
+    #ffffff80;
   opacity: 0;
   border-radius: 100%;
   transform: scale(1);
   transition: 0.9s;
 }
-
 .download-btn.clicked::after {
-  animation: ripple 0.8s ease-out;
+  animation:
+    ripple 0.8s ease-out;
 }
-
 @keyframes ripple {
   0% {
     transform: scale(0);
     opacity: 1;
   }
-
   100% {
     transform: scale(20);
     opacity: 0;
-  }
-}
-
+  }}
 /* Progress bar animation */
 @keyframes pulse {
 
@@ -157,16 +153,12 @@ body {
   100% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.05);
-  }
-}
-
+  }}
 .pulse {
   animation: pulse 1.5s infinite;
 }
-
 
 /* code container */
 .code {
@@ -178,31 +170,36 @@ body {
   align-items: start;
   gap: 10px;
 }
-
 .code-container {
-  width: 100%;
+  width: 300px;
   height: fit-content;
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, rgba(2, 0, 36, 1) 100%, rgba(6, 7, 91, 1) 10%, rgba(6, 4, 4, 1) 100%);
+  background:
+    linear-gradient(180deg,
+      rgba(2, 0, 36, 1) 100%,
+      rgba(6, 7, 91, 1) 10%,
+      rgba(6, 4, 4, 1) 100%);
   padding: 10px;
   padding-bottom: 0;
   border-radius: 5px;
-  font-family: 'Courier New', Courier, monospace;
-  border: 1px solid rgba(0, 0, 255, 0.514);
-  box-shadow: rgba(24, 5, 107, 0.56) 0px 54px 55px, rgba(24, 5, 107, 0.56) 0px -12px 30px, rgba(24, 5, 107, 0.56) 0px 4px 6px, rgba(24, 5, 107, 0.56) 0px 12px 13px, rgba(24, 5, 107, 0.56) 0px -3px 5px;
-  animation: glow 1.5s ease-in-out infinite alternate;
+  font-family:
+    'Courier New',
+    Courier,
+    monospace;
+  border:
+    1px solid rgba(0, 0, 255, 0.514);
+  box-shadow:
+    #18056b8f 0px 54px 55px,
+    #18056b8f 0px -12px 30px,
+    #18056b8f 0px 4px 6px,
+    #18056b8f 0px 12px 13px,
+    #18056b8f 0px -3px 5px;
+  animation:
+    glow 1.5s ease-in-out infinite alternate;
 }
-
 .code-container:nth-child(2) {
-  /* transform: translateX(-20px); */
   margin-top: 10px;
 }
-
-/* .code-container:last-child {
-  transform: translateX(-40px);
-  margin-top: 40px;
-} */
-
 .code-container-header {
   display: flex;
   justify-content: space-between;
@@ -212,19 +209,16 @@ body {
   gap: 9px;
   margin-bottom: -5px;
 }
-
 .code-container-header:first-child {
   margin-top: 0px;
   padding-bottom: 0px;
 }
-
 .code-container-header h2 {
   font-size: 20px;
   color: white;
   font-weight: 800;
   margin-top: -9px;
 }
-
 .circle {
   display: flex;
   justify-content: start;
@@ -232,31 +226,31 @@ body {
   margin-bottom: 10px;
   gap: 9px;
 }
-
 .circle div {
   height: 10px;
   width: 10px;
   border-radius: 100px;
-  background: rgb(234, 158, 15);
+  background: #ea9e0f;
 }
-
 .circle div:first-child {
   background: red;
 }
-
 .circle div:nth-child(2) {
   background: green;
 }
-
 .circle div:last-child {
   background: blue;
 }
-
 code[class*=language-],
 pre[class*=language-] {
   color: #657b83;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 8px;
+  font-family:
+    Consolas, Monaco,
+    'Andale Mono',
+    'Ubuntu Mono',
+    monospace;
+  font-size: 12px;
+  overflow: hidden;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -271,17 +265,21 @@ pre[class*=language-] {
   -ms-hyphens: none;
   hyphens: none;
 }
-
 pre,
 code {
   font-size: 7px;
   all: unset;
   position: relative;
-  background-color: transparent !important;
-  white-space: pre-wrap !important;
-  margin: 0 0 0 0 !important;
-  padding: 0 0 0 0 !important;
-  word-break: break-word !important;
+  background-color:
+    transparent !important;
+  white-space:
+    pre-wrap !important;
+  margin:
+    0 0 0 0 !important;
+  padding:
+    0 0 0 0 !important;
+  word-break:
+    break-word !important;
   display: block;
   width: 100%;
 }
